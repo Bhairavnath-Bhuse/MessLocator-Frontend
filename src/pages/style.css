@@ -1,0 +1,33 @@
+.active{
+    
+        border-radius: 1rem;
+        background-color: #1a202c;       
+        color: #ffffff;
+        /* height: 30px; */
+        /* padding-bottom: 10px; */
+        text-align: center;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        display:flex ;
+        align-items: center;
+        /* height: 20px; */
+}
+
+.bt1:hover , .bt2:hover, .bt3:hover, .bt4:hover{
+    border-radius: 1rem;
+        background-color: #4b5363;       
+        color: #ffffff;
+        /* height: 30px; */
+        /* padding-bottom: 10px; */
+        text-align: center;
+        padding: 10px;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+        text-align: center;
+        display:flex ;
+        align-items: center;
+        /* height: 20px; */
+}
+
