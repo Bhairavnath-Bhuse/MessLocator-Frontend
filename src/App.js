@@ -9,7 +9,8 @@ import Navbar from './components/common/Navbar';
 // Pages
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-
+import VerifyEmail from './pages/VerifyEmail';
+import Contact from './pages/Contact';
 
 
 
@@ -40,6 +41,8 @@ function App() {
         <Route path="/pageDetails/:postId" element={<PageDetails/>} />
         <Route path="signup" element = {<Signup/>} />
         <Route path = "login" element = {<Login/>} />
+        <Route path="/verify-email" element = {<VerifyEmail/>} />
+        <Route path='contact' element = {<Contact/>} />
         
       </Routes>
     </div>

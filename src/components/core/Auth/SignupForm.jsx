@@ -30,6 +30,9 @@ function SignupForm() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const { firstName, lastName, email, password, confirmPassword } = formData
 
+  // Here the formData is an array which variables, the value of this variable is set up in the form by value={firstname} 
+  // then all this form data along with Account_Type is send to setSignUp data
+
 
   // Handle input fields, when some value changes
   function handleOnChange(e) {
@@ -44,7 +47,7 @@ function SignupForm() {
     dispatch(setSignupData(signupData))                                    // Setting signup data to state To be used after otp verification
     dispatch(sendOtp(formData.email, navigate))                           // Send OTP to user for verification
     setFormData({firstName: "", lastName: "",  email: "",  password: "",  confirmPassword: "",})           // Reset
-    setAccountType(ACCOUNT_TYPE.Client)
+    setAccountType(ACCOUNT_TYPE.Client)         //setting the default value of Account_Type to Client
   }
 
 

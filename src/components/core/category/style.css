@@ -8,3 +8,13 @@
   border: 1px solid #838080;
   border-radius: 1rem;
 } */
+
+.form-style {
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.18);
+  background-color: #1F2933; /* bg-richblack-800 */
+  border-radius: 0.5rem; /* rounded-[0.5rem] */
+  color: #F3F4F6; /* text-richblack-5 */
+  width: 100%; /* w-full */
+  padding: 12px; /* p-[12px] */
+}
+

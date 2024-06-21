@@ -24,8 +24,12 @@ export function sendOtp(email, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
-      const response = await apiConnector("POST", SENDOTP_API, {email, checkUserPresent: true,})
+      
+    console.log("Before Sending the OTP : ",SENDOTP_API);
+      const response = await apiConnector("POST","http://localhost:4000/api/v1/auth/sendotp", {email, checkUserPresent: true,})
       console.log("SENDOTP API RESPONSE............", response)
+
+      console.log("After Sending the OTP");
     
       if(!response.data.success) {
         throw new Error(response.data.message)
@@ -73,6 +77,7 @@ export function login(email, password, navigate) {
     const toastId = toast.loading("Loading...")
     dispatch(setLoading(true))
     try {
+      console.log("Before Login : ",LOGIN_API,"Email and Password is ",email," ",password)
       const response = await apiConnector("POST", LOGIN_API, {email, password,})
       console.log("LOGIN API RESPONSE............", response)
 
