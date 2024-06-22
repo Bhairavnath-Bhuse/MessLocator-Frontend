@@ -54,7 +54,7 @@ const Card = (props) => {
                     <p className=" text-richblack-900 font-mono "><span className="text-lg">With:</span> {truncateText(post.about, 25)}</p>
                     <p className=" text-richblack-900 font-mono "><span className="text-lg">Date:</span> {formattedDate}</p>
                     <div className='flex flex-row gap-7 pb-5'>                                         {/* here we passed "Learn More" as a children in CTAButton component and here compnent is used because there are many button like this; */}
-                        <CTAButton active={true} linkto={`/pageDetails/${post._id}`}>  Know More </CTAButton>          {/* here active is passed as props because if active is true then button is yellow otherwise black; */}
+                        <CTAButton active={true} postDet={post} linkto={`/pageDetails/${post._id}`}>  Know More </CTAButton>          {/* here active is passed as props because if active is true then button is yellow otherwise black; */}
                     </div>
                 </div>
            </div>

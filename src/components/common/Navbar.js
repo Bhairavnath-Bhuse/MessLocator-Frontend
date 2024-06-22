@@ -11,7 +11,7 @@ import { NavbarLinks } from "../../data/navbar-links"
 
 
 import {ACCOUNT_TYPE } from "../../data/constants"
-// import ProfileDropdown from "../core/Auth/ProfileDropDown"
+import ProfileDropdown from "../../components/core/Auth/ProfileDropDown"
 
 
 
@@ -80,7 +80,7 @@ function Navbar() {
                                )
            }
 
-          {/* { token !== null && <ProfileDropdown />}               added profile dropdown if token is not equal to null means user is present */}
+          { token !== null && <ProfileDropdown />}                {/*added profile dropdown if token is not equal to null means user is present */}
 
         </div>
 

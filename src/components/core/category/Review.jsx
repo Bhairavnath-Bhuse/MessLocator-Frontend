@@ -4,9 +4,9 @@ import { apiConnector } from '../../../services/operations/apiconnector';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading2 from './Loading2';
+import { IoRefreshCircleSharp } from "react-icons/io5";
 
-const Review = (props) => {
-    const { post } = props;
+const Review = ({ post }) => {
     const [reviews, setReviews] = useState([]);
     const [mycomment, setmycomment] = useState("");
     const [isCommentLoading, setisCommentLoading] = useState(false);
@@ -14,7 +14,7 @@ const Review = (props) => {
 
     const token = useSelector((state) => state.auth.token);
 
-    const fetchPostDetails = async () => {
+    const fetchReviews = async () => {
         if (!post) return;
 
         try {
@@ -34,22 +34,13 @@ const Review = (props) => {
     };
 
     useEffect(() => {
-        fetchPostDetails();
-    }, [post]);
-
-    useEffect(() => {
-        // Re-fetch post details whenever reviews are updated to keep the list up to date
-        fetchPostDetails();
-    }, [reviews]);
-
-    if (!post) {
-        return <div>Loading...</div>;
-    }
+        fetchReviews();
+    }, [post]); // Fetch reviews only when the post changes
 
     const handleSubmit = async () => {
         setisCommentLoading(true);
         const bodyData = {
-            foodId: `${post._id}`,
+            foodId: post._id,
             review: mycomment,
         };
         console.log("Data in handle submit of review ", bodyData);
@@ -73,7 +64,7 @@ const Review = (props) => {
             if (response.status === 200) {
                 const updatedReviews = await response.json();
                 console.log("Updated value of review is ", updatedReviews);
-                setReviews(updatedReviews.ratingReview.review); // Adjust this line to match your response structure
+                setReviews((prevReviews) => [...prevReviews, updatedReviews.ratingReview.review]); // Append new review to existing reviews
                 setmycomment(''); // Clear comment input after successful submission
                 toast.success('Review Posted Successfully!');
             } else {
@@ -87,6 +78,10 @@ const Review = (props) => {
             setisCommentLoading(false);
         }
     };
+
+    if (!post) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className='w-11/12 mx-auto m-4'>
@@ -126,7 +121,14 @@ const Review = (props) => {
                                     className="h-[30px] w-[30px] rounded-full"
                                 />
                             )}
-                            <p className='font-mono'>{rev.userName ? rev.userName : 'Anonymous'}</p>
+                            <p className='font-mono'>
+                                {rev.userName ? rev.userName : (
+                                    <span className="">
+                                        Need to refresh!
+                                        <IoRefreshCircleSharp />
+                                    </span>
+                                )}
+                            </p>
                         </div>
                         <p className='mb-2'>{rev.review}</p>
                         <hr style={{ border: "1px reach-black-400 " }} />
