@@ -10,7 +10,7 @@ import { NavbarLinks } from "../../data/navbar-links"
 // import { apiConnector } from "../../services/operations/apiconnector"
 
 
-import {ACCOUNT_TYPE } from "../../data/constants"
+// import {ACCOUNT_TYPE } from "../../data/constants"
 import ProfileDropdown from "../../components/core/Auth/ProfileDropDown"
 
 
@@ -20,6 +20,8 @@ function Navbar() {
   const { token } = useSelector((state) => state.auth)                    //fetch token from auth reducer using useSelector hook;
   const { user } = useSelector((state) => state.profile)
 //   const { totalItems } = useSelector((state) => state.cart)
+
+
 
   const location = useLocation()                                               // location is used for location.pathname;                                                       
 
@@ -37,10 +39,10 @@ function Navbar() {
          
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         
-        <Link to="/"> <img src = {logo} alt="Logo" width = {160} height = {32} loading = "lazy"/> </Link>           {/* Logo */}
+        <Link to="/" className="hidden md:block"> <img src = {logo} alt="Logo" width = {160} height = {32} loading = "lazy"/> </Link>           {/* Logo */}
 
-        <nav className="hidden md:block">                                                                    {/* Navigation links */}
-          <ul className="flex gap-x-6 text-richblack-25">
+        <nav className="  md:block">                                                                    {/* Navigation links */}
+          <ul className="flex gap-x-2 md:gap-x-6 text-richblack-25">
 
               { NavbarLinks.map((link, index) => (
 
@@ -63,7 +65,7 @@ function Navbar() {
 
         {/* Login / Signup / Dashboard */}
 
-        <div className="hidden items-center gap-x-4 md:flex">
+        <div className="items-center md:gap-x-4 md:flex">
 
         
                                                         {/* if token === null then user are not login so we show login icon and sign icon  */}
@@ -84,7 +86,6 @@ function Navbar() {
 
         </div>
 
-        <button className="mr-4 md:hidden">  <AiOutlineMenu fontSize={24} fill="#AFB2BF" />  </button>
        
       </div>
     </div>

@@ -9,6 +9,8 @@ const location = ["Pimpri-Chinchwad", "Pune", "Hinjewadi"];
 export default function EditPostDetails(props) {
   const { foodId } = props;
   const { token } = useSelector((state) => state.auth);
+  // localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null;
+  // 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,6 +23,7 @@ export default function EditPostDetails(props) {
 
       console.log("Printing the data from edit post details ", data2);
       dispatch(editPostDetails(token, data2));
+      console.log("Token after the request ",token);
     } catch (error) {
       console.log("ERROR MESSAGE - ", error.message);
     }

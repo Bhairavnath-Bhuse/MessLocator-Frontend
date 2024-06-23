@@ -14,12 +14,15 @@ const ContactUsForm = () => {
    
   const submitContactForm = async (data) => {   
     const toastId = toast.loading("Loading...")
+    // console.log("API Req in contact form is ",contactusEndpoint.CONTACT_US_API, "and their data are ",data)
     try{
           await apiConnector( "POST",  contactusEndpoint.CONTACT_US_API, data);
     } 
     catch (error) {
       console.log("ERROR MESSAGE - ", error.message)
     }
+    // console.log("API Req in contact form is ",contactusEndpoint.CONTACT_US_API, "and their data are ",data)
+
     toast.dismiss(toastId)
   } 
 

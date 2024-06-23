@@ -7,7 +7,7 @@ import { settingsEndpoints,postEndpoints } from "./api"
 
 
 const { UPDATE_DISPLAY_PICTURE_API, UPDATE_PROFILE_API, } = settingsEndpoints;
-const {UPDATE_FOOD_POST,DELETE_FOOD_POST} = postEndpoints;
+const {UPDATE_FOOD_POST, DELETE_FOOD_POST, CREATE_FOOD_POST, } = postEndpoints;
  
 
 export function updateDisplayPicture(token, formData) {
@@ -68,6 +68,7 @@ export function updateProfile(token, formData) {
 export function editPostDetails(token, formData) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
+    console.log("Value of Token is ",token)
     try {
       const response = await apiConnector("PUT", UPDATE_FOOD_POST,
                       formData,
@@ -82,13 +83,47 @@ export function editPostDetails(token, formData) {
         throw new Error(response.data.message)
         }
       toast.success("Food Post Updated Successfully")
-      dispatch(setUser(response.data.data))
+      // dispatch(setUser(...response.data.data))
     }
      catch(error) {
       console.log("UPDATE_FOOD_POST API ERROR............", error)
       toast.error("Could Not Update  Post Details")
     }
+
     toast.dismiss(toastId)
+
+   
+  }
+}
+
+
+export function addPost(token, formData) {
+  return async () => {
+    const toastId = toast.loading("Loading...")
+    console.log("Value of Token is ",token)
+    try {
+      const response = await apiConnector("POST", CREATE_FOOD_POST,
+                      formData,
+                      {
+                        "Content-Type": "multipart/form-data",
+                        Authorization: `Bearer ${token}`,
+                      }
+                    )
+      console.log("CREATE_FOOD_POST API RESPONSE............",  response )
+         
+      if(!response.data.success){
+        throw new Error(response.data.message)
+        }
+      toast.success("Food Post Added Successfully")
+    }
+     catch(error) {
+      console.log("CREATE_FOOD_POST API ERROR............", error)
+      toast.error("Could Not Add  Post Details")
+    }
+
+    toast.dismiss(toastId)
+
+   
   }
 }
 

@@ -7,6 +7,8 @@ import Navbar from './components/common/Navbar';
 import Settings from './components/core/Dashboard/Settings';
 import MyPosts from './components/core/Dashboard/Posts/MyPosts';
 import Editpost from './components/core/Dashboard/Posts/EditPost';
+import AddPost from './components/core/Dashboard/Posts/AddPost';
+
 
 
 
@@ -18,6 +20,8 @@ import Contact from './pages/Contact';
 import ForgotPassword from './pages/ForgotPassword';
 import Dashboard from './pages/Dashboard';
 import MyProfile from './components/core/Dashboard/MyProfile';
+import UpdatePassword from './pages/UpdatePassword';
+import About from './pages/About';
 
 
 
@@ -51,6 +55,8 @@ function App() {
         <Route path="/verify-email" element = {<VerifyEmail/>} />
         <Route path='contact' element = {<Contact/>} />
         <Route path="/forgot-password" element = {<ForgotPassword/>} />
+        <Route path="/update-password/:id" element = {<UpdatePassword/>} />
+        <Route path="about" element = {<About/>} />
         
         <Route  element = {<Dashboard/>} >
         
@@ -58,7 +64,7 @@ function App() {
           <Route path="dashboard/Settings" element={<Settings />} /> 
           <Route path="dashboard/my-posts" element={<MyPosts/>} />
           <Route path="/pageDetails/:postId/dashboard/edit-post/:foodId" element={<Editpost/>} />
-        
+          <Route path="dashboard/add-post" element={<AddPost/>} />
         </Route>
         
       </Routes>

@@ -9,6 +9,8 @@ import { Toaster } from 'react-hot-toast';
 import { Provider } from "react-redux";
 import rootReducer from './Context/reducer';
 import {configureStore} from "@reduxjs/toolkit"
+// import { PersistGate } from 'redux-persist/integration/react';
+// import { store, persistor } from './data/store';
 
 
 
@@ -23,8 +25,10 @@ root.render(
   <Provider store = {store}>
     <BrowserRouter>
         <AppContextProvider>
-          <App />
-          <Toaster/>
+          
+              <App />
+              <Toaster/>
+        
       </AppContextProvider>
     </BrowserRouter>
   </Provider>

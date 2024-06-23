@@ -117,6 +117,7 @@ export function logout(navigate) {
 
 export function getPasswordResetToken(email , setEmailSent) {
   return async(dispatch) => {
+    const toastId = toast.loading("Loading...")
     dispatch(setLoading(true));
     try{
       const response = await apiConnector("POST", RESETPASSTOKEN_API, {email,})
@@ -133,6 +134,7 @@ export function getPasswordResetToken(email , setEmailSent) {
       console.log("RESET PASSWORD TOKEN Error", error);
       toast.error("Failed to send email for resetting password");
     }
+    toast.dismiss(toastId)
     dispatch(setLoading(false));
   }
 }
