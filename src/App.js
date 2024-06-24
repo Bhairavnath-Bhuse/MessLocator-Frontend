@@ -8,6 +8,7 @@ import Settings from './components/core/Dashboard/Settings';
 import MyPosts from './components/core/Dashboard/Posts/MyPosts';
 import Editpost from './components/core/Dashboard/Posts/EditPost';
 import AddPost from './components/core/Dashboard/Posts/AddPost';
+import Footer from './components/common/Footer';
 
 
 
@@ -44,7 +45,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='w-[100vw]'>
       <Navbar/>
 
       <Routes>
@@ -68,6 +69,8 @@ function App() {
         </Route>
         
       </Routes>
+
+      <Footer/>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import PageDetailsSecI from './PageDetailsSecI';
 
 const PageDetails = () => {
     const { postId } = useParams();
-    console.log("Post Id in PageDetails is ", postId)
+    // console.log("Post Id in PageDetails is ", postId)
     const [post, setPost] = useState(null);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const PageDetails = () => {
             try {
                 const response = await apiConnector('GET', `http://localhost:4000/api/v1/mess/getFoodPost?foodId=${postId}`);
 
-                console.log("Response from BackEnd ", response);
+                // console.log("Response from BackEnd ", response);
 
                 if (response.status === 200) {
                     setPost(response.data.data[0]);

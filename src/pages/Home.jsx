@@ -16,18 +16,19 @@ const Home = () => {
         <div>
             {/* Section Div */}
             <div className="bg-richblack-900 w-screen text-white">
-                <div className="relative mx-auto w-11/12 pt-5 flex flex-col items-center justify-between gap-8 ">
-                    <div className="mx-auto font-bold text-3xl">
-                        <p>Enrich Your Food Diet With MessFinder</p>
+                <div className="relative mx-auto w-10/12 pt-5 flex flex-col items-center justify-between gap-6 ">
+                    <div className="mx-auto font-bold ">
+                        <p className="text-2xl">Enrich Your Food Diet With Mess Locator</p>
                     </div>
 
-                    <div className="text-center text-lg font-bold text-richblack-200">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Debitis optio expedita ipsam nulla corrupti rem laborum, 
-                        necessitatibus obcaecati quidem reiciendis?</p>
+                    <div className="text-center w-11/12 text-lg font-bold text-richblack-200">
+                        <p>A Nutritious diet can improve mood, reduce stress, and enhance
+                             cognitive function, contributing to better mMntal Health.
+                             Curate a diverse selection of Messes offering high-quality, 
+                             Nutritious Meals to cater to different dietary preferences and needs.</p>
                     </div>
 
-                    <div className='flex flex-row gap-7 pb-5 mt-8'>                                         
+                    <div className='flex flex-row gap-7 pb-5 md:mt-6'>                                         
                         <CTAButton active={true} linkto={"/about"}>Learn More</CTAButton>          
                     </div>
                 </div>

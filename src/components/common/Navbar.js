@@ -3,7 +3,7 @@ import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
 import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
-import logo from "../../assests/logo.png"
+import logo from "../../assests/logoFinal.png"
 
 
 import { NavbarLinks } from "../../data/navbar-links"
@@ -39,7 +39,7 @@ function Navbar() {
          
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         
-        <Link to="/" className="hidden md:block"> <img src = {logo} alt="Logo" width = {160} height = {32} loading = "lazy"/> </Link>           {/* Logo */}
+        <Link to="/" className="hidden md:block "> <img src = {logo} alt="Logo" className="rounded-[0.4rem]" width = {160} height = {32} loading = "lazy"/> </Link>           {/* Logo */}
 
         <nav className="  md:block">                                                                    {/* Navigation links */}
           <ul className="flex gap-x-2 md:gap-x-6 text-richblack-25">

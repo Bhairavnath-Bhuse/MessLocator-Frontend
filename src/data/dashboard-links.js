@@ -23,7 +23,7 @@ export const sidebarLinks = [
   },
   {
     id: 4,
-    name: "Add Course",
+    name: "Add Post",
     path: "/dashboard/add-post",
     type: ACCOUNT_TYPE.MessOwner,
     icon: "VscAdd",

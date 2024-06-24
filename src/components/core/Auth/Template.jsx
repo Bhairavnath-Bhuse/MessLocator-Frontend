@@ -13,7 +13,7 @@ function Template({ title, description1, description2, image, formType }){
 
   return (
 
-    <div className="grid min-h-[calc(100vh-3.5rem)] bg-richblack-900 place-items-center">
+    <div className="grid min-h-[calc(100vh-3.5rem)] w-[100vw]  bg-richblack-900 place-items-center">
 
       { loading ? ( <div className="spinner"></div> ) : (
          

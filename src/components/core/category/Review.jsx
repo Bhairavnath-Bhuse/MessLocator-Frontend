@@ -88,7 +88,7 @@ const Review = ({ post }) => {
             <ToastContainer />
             <div className='flex flex-col sm:mt-16 gap-3'>
                 <hr style={{ border: "1px reach-black-400 " }} />
-                <h2 className='font-mono text-xl'>Total Reviews: {reviews.length}</h2>
+                <h2 className='font-mono text-richblack-900 text-xl'>Total Reviews: {reviews.length}</h2>
                 <hr style={{ border: "1px reach-black-400 " }} />
 
                 <textarea
@@ -121,16 +121,16 @@ const Review = ({ post }) => {
                                     className="h-[30px] w-[30px] rounded-full"
                                 />
                             )}
-                            <p className='font-mono'>
+                            <p className='font-mono text-richblack-900'>
                                 {rev.userName ? rev.userName : (
-                                    <span className="">
+                                    <span className="text-richblack-900">
                                         Need to refresh!
                                         <IoRefreshCircleSharp />
                                     </span>
                                 )}
                             </p>
                         </div>
-                        <p className='mb-2'>{rev.review}</p>
+                        <p className='mb-2 text-richblack-900'>{rev.review}</p>
                         <hr style={{ border: "1px reach-black-400 " }} />
                     </div>
                 ))}

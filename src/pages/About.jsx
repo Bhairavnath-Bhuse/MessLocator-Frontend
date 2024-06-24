@@ -95,7 +95,7 @@ const About = () => {
                         <div class="card__content--container | flow">
                         <h2 class="card__title">Bhairavnath</h2>
                         <p class="card__description">
-                           Final Year Computer Engineering Student eager to apply Skills in Developement field
+                           Final Year Computer Engineering Student eager to apply Skills in field of Computer
                         </p>
                         </div>
                     

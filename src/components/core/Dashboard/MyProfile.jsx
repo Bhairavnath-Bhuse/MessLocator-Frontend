@@ -24,9 +24,9 @@ export default function MyProfile(){
         </div>
       
         
-      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12">
+      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-4 md:p-8 px-12">
        
-        <div className="flex items-center gap-x-4">
+        <div className="flex flex-col md:flex-row md:items-center gap-x-4">
           <img src={user?.image} alt={`profile-${user?.firstName}`} className="aspect-square w-[78px] rounded-full object-cover"  />
           
           <div className="space-y-1">
@@ -57,7 +57,7 @@ export default function MyProfile(){
           
         </div>
 
-        <div className="flex max-w-[500px] justify-between">
+        <div className="flex flex-col md:flex-row max-w-[500px] justify-between">
 
           <div className="flex flex-col gap-y-5">
             <div>

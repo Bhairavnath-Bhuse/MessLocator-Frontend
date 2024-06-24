@@ -90,9 +90,7 @@ export function editPostDetails(token, formData) {
       toast.error("Could Not Update  Post Details")
     }
 
-    toast.dismiss(toastId)
-
-   
+    toast.dismiss(toastId)   
   }
 }
 
@@ -125,6 +123,33 @@ export function addPost(token, formData) {
 
    
   }
+}
+
+export function deletePost(token, foodId) {
+  return async () => {
+    const toastId = toast.loading("Loading...");
+    console.log("Value of Token in delete post is ", token, " and value of food id is ", foodId);
+    console.log("Value of api response in delete post is ", `${DELETE_FOOD_POST}?foodId=${foodId}`);
+
+    try {
+      const response = await apiConnector('DELETE', `${DELETE_FOOD_POST}?foodId=${foodId}`,
+      null,
+        {
+        Authorization: `Bearer ${token}`,
+      });
+      console.log("DELETE_POST API RESPONSE............", response);
+
+      if (!response.data.success) {
+        throw new Error(response.data.message);
+      }
+      toast.success("Food Post Deleted Successfully");
+    } catch (error) {
+      console.log("DELETE API ERROR............", error);
+      toast.error("Could Not Delete Post");
+    }
+
+    toast.dismiss(toastId);
+  };
 }
 
 
