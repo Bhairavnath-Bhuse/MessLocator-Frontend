@@ -52,7 +52,7 @@ const AllPost = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No posts available</p>
+                    <p className="flex items-center justify-center">No posts available</p>
                 )}
             </div>
         </div>

@@ -128,7 +128,7 @@ export function addPost(token, formData) {
 export function deletePost(token, foodId) {
   return async () => {
     const toastId = toast.loading("Loading...");
-    console.log("Value of Token in delete post is ", token, " and value of food id is ", foodId);
+    // console.log("Value of Token in delete post is ", token, " and value of food id is ", foodId);
     console.log("Value of api response in delete post is ", `${DELETE_FOOD_POST}?foodId=${foodId}`);
 
     try {
@@ -137,7 +137,7 @@ export function deletePost(token, foodId) {
         {
         Authorization: `Bearer ${token}`,
       });
-      console.log("DELETE_POST API RESPONSE............", response);
+      // console.log("DELETE_POST API RESPONSE............", response);
 
       if (!response.data.success) {
         throw new Error(response.data.message);
