@@ -55,6 +55,7 @@ const MyPosts = () => {
 
     useEffect(() => {
         getOwnerFoodPost();
+        // eslint-disable-next-line
     }, [userId]); // Depend on userId
 
     return (

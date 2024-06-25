@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { apiConnector } from "../../../services/operations/apiconnector";
-import { postEndpoints } from "../../../services/operations/api";
+import { catalogData } from "../../../services/operations/api";
 // require("dotenv").config();
 import Card from "./Card"
 
@@ -15,7 +15,7 @@ const CategoryPost = (props) => {
         try {
             console.log("Printing url");
             const response = await apiConnector("GET", 
-                `http://localhost:4000/api/v1/mess/foodCategory?location=${category}`
+                `${catalogData.CATALOGPAGEDATA_API}?location=${category}`
             );
             
             if (response.status === 200) {
@@ -32,6 +32,7 @@ const CategoryPost = (props) => {
 
     useEffect(() => {
         getCategories();
+        // eslint-disable-next-line
     }, [category]); // Added category as a dependency
 
     return (

@@ -2,14 +2,14 @@ import { useState,Fragment } from "react";
 import { AppContext } from "../../../Context/AppContext";
 import "../../../pages/style.css"
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
-import AllPost from "../category/AllPost";
+// import { NavLink } from "react-router-dom";
+// import AllPost from "../category/AllPost";
 
 const ExploreMore = () => {
   // const context = useContext(AppContext);
 
   const [active, setActive] = useState("");
-  const { category,setCategory } = useContext(AppContext);
+  const { setCategory } = useContext(AppContext);
 
   const handleClick = (event) => {
     const value = event.target.value;

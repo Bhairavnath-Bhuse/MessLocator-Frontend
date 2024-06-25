@@ -9,7 +9,7 @@ export default function MyProfile(){
   const { user } = useSelector((state) => state.profile)
   const navigate = useNavigate()
 
-  const profileImageUrl = user?.image ? `${user.image}?${new Date().getTime()}` : null;
+  // const profileImageUrl = user?.image ? `${user.image}?${new Date().getTime()}` : null;
 
 
   return (

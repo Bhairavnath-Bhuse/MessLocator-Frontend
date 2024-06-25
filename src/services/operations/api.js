@@ -1,4 +1,4 @@
-const BASE_URL ="http://localhost:4000/api/v1"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 // process.env.REACT_APP_BASE_URL
 
 // AUTH ENDPOINTS
@@ -31,7 +31,7 @@ export const postEndpoints = {
 
   // RATINGS AND REVIEWS
 export const ratingsEndpoints = {
-    GET_REVIEWS: BASE_URL + "/course/getReviews",
+    GET_REVIEWS: BASE_URL + "/mess/getReviews",
     CREATE_REVIEWS: BASE_URL + "/mess/createRating"
   }
 

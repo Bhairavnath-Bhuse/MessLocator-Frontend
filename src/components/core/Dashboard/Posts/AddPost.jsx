@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { addPost } from "../../../../services/operations/SettingAPI";
 import IconBtn from "../../../common/IconBtn";
 
@@ -59,6 +59,7 @@ export default function AddPost() {
 
       await dispatch(addPost(token, formData));
       setLoading(false);
+      // eslint-disable-next-line
       { navigate("/dashboard/my-posts") };
     } catch (error) {
       setLoading(false);

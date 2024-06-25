@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { apiConnector } from '../../../services/operations/apiconnector';
 import PageDetailsSecI from './PageDetailsSecI';
+import { postEndpoints } from '../../../services/operations/api';
 
 const PageDetails = () => {
     const { postId } = useParams();
@@ -12,7 +13,7 @@ const PageDetails = () => {
     useEffect(() => {
         const fetchPostDetails = async () => {
             try {
-                const response = await apiConnector('GET', `http://localhost:4000/api/v1/mess/getFoodPost?foodId=${postId}`);
+                const response = await apiConnector('GET', `${postEndpoints.GET_FOOD_POST}?foodId=${postId}`);
 
                 // console.log("Response from BackEnd ", response);
 

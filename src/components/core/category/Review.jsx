@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, } from 'react';
 import { useSelector } from 'react-redux';
 import { apiConnector } from '../../../services/operations/apiconnector';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading2 from './Loading2';
 import { IoRefreshCircleSharp } from "react-icons/io5";
+import { ratingsEndpoints } from '../../../services/operations/api';
 
 const Review = ({ post }) => {
     const [reviews, setReviews] = useState([]);
     const [mycomment, setmycomment] = useState("");
     const [isCommentLoading, setisCommentLoading] = useState(false);
-    const formRef = useRef(null);
-
+    // const formRef = useRef(null);
     const token = useSelector((state) => state.auth.token);
 
     const fetchReviews = async () => {
         if (!post) return;
 
         try {
-            const response = await apiConnector('GET', `http://localhost:4000/api/v1/mess/getReviews?foodId=${post._id}`);
+            const response = await apiConnector('GET', `${ratingsEndpoints.GET_REVIEWS}?foodId=${post._id}`);
 
             if (response.status === 200) {
                 console.log('Fetched reviews:', response.data.data);
@@ -35,6 +35,7 @@ const Review = ({ post }) => {
 
     useEffect(() => {
         fetchReviews();
+        // eslint-disable-next-line
     }, [post]); // Fetch reviews only when the post changes
 
     const handleSubmit = async () => {
@@ -119,6 +120,7 @@ const Review = ({ post }) => {
                                 <img
                                     src="https://www.pngitem.com/pimgs/m/521-5211656_cute-cartoon-characters-boy-hd-png-download.png"
                                     className="h-[30px] w-[30px] rounded-full"
+                                    alt='post'
                                 />
                             )}
                             <p className='font-mono text-richblack-900'>

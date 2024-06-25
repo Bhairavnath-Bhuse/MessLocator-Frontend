@@ -1,6 +1,6 @@
 import React from 'react';
 import about1 from "../assests/about1.webp"
-import about2 from "../assests/about2.jpg"
+// import about2 from "../assests/about2.jpg"
 import vision from "../assests/vision1.webp"
 import CodeBlocks from '../components/core/home/CodeBlocks';
 import "../components/core/home/CodeBlock.css"
@@ -88,7 +88,7 @@ const About = () => {
                     <img
                         className="card__background rounded-md "
                         src= {devPhoto}
-                        alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+                        alt="post"
                        
                     />
                     <div class="card__content | flow">

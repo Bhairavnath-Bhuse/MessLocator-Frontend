@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
+// import { useState } from "react"
+// import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
 import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
@@ -18,7 +18,7 @@ import ProfileDropdown from "../../components/core/Auth/ProfileDropDown"
 function Navbar() {
 
   const { token } = useSelector((state) => state.auth)                    //fetch token from auth reducer using useSelector hook;
-  const { user } = useSelector((state) => state.profile)
+  // const { user } = useSelector((state) => state.profile)
 //   const { totalItems } = useSelector((state) => state.cart)
 
 
@@ -26,7 +26,7 @@ function Navbar() {
   const location = useLocation()                                               // location is used for location.pathname;                                                       
 
 //   const [subLinks, setSubLinks] = useState([])
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
 
   function matchRoute(route){                                   // if route is matched with (current route) then return true and color of text turn yellow otherwise white;
     return matchPath({ path: route } , location.pathname)

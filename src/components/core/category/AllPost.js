@@ -12,7 +12,7 @@ const AllPost = () => {
     const getCategories = async () => {
         try {
             console.log("Printing url")
-            const response = await apiConnector("GET", `http://localhost:4000/api/v1/mess/getAllFoodPost`);
+            const response = await apiConnector("GET", postEndpoints.ALL_FOOD_POST);
             
             
             if (response.status === 200) {

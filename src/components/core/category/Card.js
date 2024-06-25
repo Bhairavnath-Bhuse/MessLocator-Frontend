@@ -40,7 +40,7 @@ const Card = (props) => {
                         <img
                             className="rounded-xl h-[220px] w-[320px] "
                             src="https://i.imgur.com/QYWAcXk.jpeg"
-                            alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+                            alt="post"
                             // width="300" 
                             // height="200"
                             

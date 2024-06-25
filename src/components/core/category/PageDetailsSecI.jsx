@@ -59,6 +59,7 @@ const PageDetailsSecI = (props) => {
                                     <img
                                         src="https://www.pngitem.com/pimgs/m/521-5211656_cute-cartoon-characters-boy-hd-png-download.png"
                                         className="h-[40px] w-[40px] rounded-full"
+                                        alt=" "
                                     />
                                 )}
                             </div>
@@ -84,7 +85,7 @@ const PageDetailsSecI = (props) => {
                             <img
                                 className="rounded-xl h-[250px] w-[350px]"
                                 src="https://i.imgur.com/QYWAcXk.jpeg"
-                                alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+                                alt=" Post" 
                                 width="300"
                                 height="200"
                             />

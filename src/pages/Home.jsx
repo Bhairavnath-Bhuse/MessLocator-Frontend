@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./style.css";
 import CTAButton from "../components/core/home/Button";
 import ExploreMore from "../components/core/home/ExploreMore";
@@ -8,7 +8,7 @@ import { AppContext } from "../Context/AppContext";
 import CategoryPost from "../components/core/category/CategoryPost";
 
 const Home = () => {
-    const { category, setCategory } = useContext(AppContext);
+    const { category } = useContext(AppContext);
 
     console.log("Printing category value", category);
 
