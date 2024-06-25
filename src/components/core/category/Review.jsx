@@ -55,7 +55,7 @@ const Review = ({ post }) => {
                 return;
             }
 
-            const response = await fetch('http://localhost:4000/api/v1/mess/createRating', {
+            const response = await fetch(`${ratingsEndpoints.CREATE_REVIEWS}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
