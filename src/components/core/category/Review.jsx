@@ -17,6 +17,7 @@ const Review = ({ post }) => {
     const fetchReviews = async () => {
         if (!post) return;
 
+        const toastId = toast.loading("Loading...")
         try {
             const response = await apiConnector('GET', `${ratingsEndpoints.GET_REVIEWS}?foodId=${post._id}`);
 
@@ -31,6 +32,7 @@ const Review = ({ post }) => {
             console.error('Error while fetching the data:', err);
             toast.error('Unable to fetch the post, please try later');
         }
+        toast.dismiss(toastId)
     };
 
     useEffect(() => {

@@ -5,6 +5,8 @@ import { apiConnector } from "../../../../services/operations/apiconnector";
 import { profileEndpoints } from "../../../../services/operations/api";
 import Card from "../../category/Card";
 import { useSelector } from "react-redux";
+// import { toast } from "react-hot-toast"
+
 
 const MyPosts = () => {
     const [posts, setPosts] = useState([]);
@@ -19,6 +21,7 @@ const MyPosts = () => {
             toast.error("User ID is not available.");
             return;
         }
+        const toastId = toast.loading("Loading...")
 
         try {
             // console.log("API url is ", profileEndpoints.GET_OWNER_POST_LIST, "and owner id is ", userId);
@@ -51,6 +54,8 @@ const MyPosts = () => {
                 toast.error('Unable to fetch the post, please try later');
             }
         }
+
+        toast.dismiss(toastId)
     };
 
     useEffect(() => {

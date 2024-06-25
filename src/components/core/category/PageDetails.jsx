@@ -12,6 +12,7 @@ const PageDetails = () => {
 
     useEffect(() => {
         const fetchPostDetails = async () => {
+            const toastId = toast.loading("Loading...")
             try {
                 const response = await apiConnector('GET', `${postEndpoints.GET_FOOD_POST}?foodId=${postId}`);
 
@@ -27,6 +28,7 @@ const PageDetails = () => {
                 console.error('Error while fetching the data:', err);
                 toast.error('Unable to fetch the post, please try later');
             }
+            toast.dismiss(toastId)
         };
 
         fetchPostDetails();

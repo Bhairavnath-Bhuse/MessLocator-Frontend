@@ -10,8 +10,10 @@ const AllPost = () => {
     const [posts, setPosts] = useState([]);
 
     const getCategories = async () => {
+        const toastId = toast.loading("Loading...")
         try {
-            console.log("Printing url")
+            // console.log("Printing url")
+            
             const response = await apiConnector("GET", postEndpoints.ALL_FOOD_POST);
             
             
@@ -29,6 +31,7 @@ const AllPost = () => {
                 // position: toast.POSITION.TOP_RIGHT,
             });
         }
+        toast.dismiss(toastId)
     };
 
     useEffect(() => {

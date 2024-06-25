@@ -18,12 +18,12 @@ export default function EditPostDetails(props) {
 
   const submitProfileForm = async (data) => {
     try {
-      console.log("Did you know what inside the post props in EditPostDetails ", foodId);
+      // console.log("Did you know what inside the post props in EditPostDetails ", foodId);
       const data2 = { ...data, foodId };
 
       console.log("Printing the data from edit post details ", data2);
       dispatch(editPostDetails(token, data2));
-      console.log("Token after the request ",token);
+      // console.log("Token after the request ",token);
     } catch (error) {
       console.log("ERROR MESSAGE - ", error.message);
     }
