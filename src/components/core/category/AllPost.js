@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import { toast } from "react-hot-toast";
 import 'react-toastify/dist/ReactToastify.css';
 import { apiConnector } from "../../../services/operations/apiconnector";
 import { postEndpoints } from "../../../services/operations/api";
 // require("dotenv").config();
 import Card from "./Card"
+
 
 const AllPost = () => {
     const [posts, setPosts] = useState([]);

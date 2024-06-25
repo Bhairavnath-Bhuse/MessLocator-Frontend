@@ -154,5 +154,35 @@ export function deletePost(token, foodId) {
 
 
 
+// export function allFoodPost() {
+//   return async () => {
+//     const toastId = toast.loading("Loading...")
+//     try {
+//         // console.log("Printing url")
+        
+//         const response = await apiConnector("GET", postEndpoints.ALL_FOOD_POST);
+        
+        
+//         if (response.status === 200) {
+//             setPosts(response.data.data); // Assuming your data is in response.data.data
+//         } else {
+//             console.error(`Failed to fetch data. Status: ${response.status}`);
+//             toast.error('Unable to fetch the post, please try later', {
+//                 // position: toast.POSITION.TOP_RIGHT,
+//             });
+//         }
+//     } catch (err) {
+//         console.log("Error while fetching the data:", err);
+//         toast.error('Unable to fetch the post, please try later', {
+//             // position: toast.POSITION.TOP_RIGHT,
+//         });
+//     }
+//     toast.dismiss(toastId)
+   
+//   }
+// }
+
+
+
 
 
