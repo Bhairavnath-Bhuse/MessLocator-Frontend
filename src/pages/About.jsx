@@ -4,7 +4,7 @@ import about1 from "../assests/about1.webp"
 import vision from "../assests/vision1.webp"
 import CodeBlocks from '../components/core/home/CodeBlocks';
 import "../components/core/home/CodeBlock.css"
-import devPhoto from "../assests/devPhoto.jpeg"
+import bhairavnath from "../assests/BhairavnathIMG.jpg"
 
 const About = () => {
   return (
@@ -87,7 +87,7 @@ const About = () => {
                     
                     <img
                         className="card__background rounded-md "
-                        src= {devPhoto}
+                        src= {bhairavnath}
                         alt="post"
                        
                     />
