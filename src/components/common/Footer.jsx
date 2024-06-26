@@ -33,7 +33,7 @@ export default function Footer() {
                     <div className="flex flex-col items-center">
                         <h2 className="text-xl font-bold mb-4">Contact</h2>
                         <p className="text-gray-400 flex justify-center flex-wrap mb-2">Email : <a href="mailto:bhairavnathbhuse@gmail.com" className="text-gray-400  hover:text-blue-200 hover:underline"> bhairavnathbhuse@gmail.com</a></p>
-                        <p className="text-gray-400 mb-2">Phone: <a href="tel:+917385806976" className="text-gray-400 hover:text-blue-200">+91 73XX XX 6976</a></p>
+                        <p className="text-gray-400 mb-2">Phone: <a href="tel:+91736976" className="text-gray-400 hover:text-blue-200">+91 73XX XX 6976</a></p>
                         <div className="flex space-x-4 flex-wrap gap-y-2 mt-4 justify-center">
                             <a href='https://www.geeksforgeeks.org/user/bhairavnath_bhuse/' target='_blank' rel="noreferrer" className="text-gray-400 hover:text-white">
                                 <SiLeetcode size={24} />
