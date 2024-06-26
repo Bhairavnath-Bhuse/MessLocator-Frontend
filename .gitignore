@@ -1,23 +1,67 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node modules
+node_modules/
 
-# dependencies
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# Testing
 /coverage
 
-# production
-/build
+# Next.js
+.next/
+/out/
 
-# misc
+# Production
+build/
+
+# Misc
 .DS_Store
+*.pem
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# SvelteKit build / generated files
+/.svelte-kit
+/.vercel
+
+# Storybook
+out/
+
+# VS Code
+.vscode/
+
+
+
+# MacOS
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# dotenv environment variables file
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.env
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+
+# Log files
+logs/
+*.log
