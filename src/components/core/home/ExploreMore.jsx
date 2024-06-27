@@ -8,7 +8,7 @@ import { useContext } from "react";
 const ExploreMore = () => {
   // const context = useContext(AppContext);
 
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("1");
   const { setCategory } = useContext(AppContext);
 
   const handleClick = (event) => {
