@@ -1,4 +1,4 @@
-# Mess Locator - FrontEnd [```live```](https://mess-locator-frontend.vercel.app/)
+# Mess Locator - FrontEnd [```live```](https://mess-locator-frontend.vercel.app/about)
 
 MessLocator is a fully functional  platform that enables users to create, consume, and review Mess Food. The platform is built using the MERN stack , which includes ReactJS, NodeJS, MongoDB, and ExpressJS.
 
