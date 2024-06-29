@@ -1,7 +1,11 @@
 // import { useState } from "react"
 // import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
 import { useSelector } from "react-redux"
-import { Link, matchPath, useLocation } from "react-router-dom"
+import { Link, matchPath, useLocation, useNavigate} from "react-router-dom";
+import { useState } from "react";
+
+import unknown from "../../assests/unknow_man.png"
+import ConfirmationModal from "./ConfirmationModal";
 
 import logo from "../../assests/logoFinal.png"
 
@@ -20,11 +24,12 @@ function Navbar() {
   const { token } = useSelector((state) => state.auth)                    //fetch token from auth reducer using useSelector hook;
   // const { user } = useSelector((state) => state.profile)
 //   const { totalItems } = useSelector((state) => state.cart)
+const [confirmationModal, setConfirmationModal] = useState(null)               // to keep track of confirmation modal
 
 
 
   const location = useLocation()                                               // location is used for location.pathname;                                                       
-
+  const navigate = useNavigate()
 //   const [subLinks, setSubLinks] = useState([])
   // const [loading, setLoading] = useState(false)
 
@@ -81,6 +86,35 @@ function Navbar() {
                                 </Link>
                                )
            }
+
+           { token === null && ( 
+            <button
+            onClick={() =>
+              setConfirmationModal({
+                text1: "You are not Logged In",
+                text2: "You have to Log In / Sign Up to view Dashboard",
+                btn1Text: "Sign Up",
+                btn2Text: "Log In",
+                btn1Handler: () => {
+                  
+                  navigate("/signup");
+                  setConfirmationModal(null);
+                  
+                },
+                btn2Handler: () => {
+                  navigate("/login");
+                  setConfirmationModal(null);
+                },
+              })
+            }
+            >
+            <img src={unknown} alt = "unknown" className="rounded-full text-white h-[33px] w-[33px]  "></img>
+            
+
+            </button>
+                               )
+           }
+           {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
 
           { token !== null && <ProfileDropdown />}                {/*added profile dropdown if token is not equal to null means user is present */}
 

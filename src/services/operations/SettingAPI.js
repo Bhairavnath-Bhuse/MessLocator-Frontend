@@ -66,7 +66,7 @@ export function updateProfile(token, formData) {
 
 
 export function editPostDetails(token, formData) {
-  return async (dispatch) => {
+  return async () => {
     const toastId = toast.loading("Loading...")
     console.log("Value of Token is ",token)
     try {
@@ -98,7 +98,7 @@ export function editPostDetails(token, formData) {
 export function addPost(token, formData) {
   return async () => {
     const toastId = toast.loading("Loading...")
-    console.log("Value of Token is ",token)
+    // console.log("Value of Token is ",token)
     try {
       const response = await apiConnector("POST", CREATE_FOOD_POST,
                       formData,
@@ -129,7 +129,7 @@ export function deletePost(token, foodId) {
   return async () => {
     const toastId = toast.loading("Loading...");
     // console.log("Value of Token in delete post is ", token, " and value of food id is ", foodId);
-    console.log("Value of api response in delete post is ", `${DELETE_FOOD_POST}?foodId=${foodId}`);
+    // console.log("Value of api response in delete post is ", `${DELETE_FOOD_POST}?foodId=${foodId}`);
 
     try {
       const response = await apiConnector('DELETE', `${DELETE_FOOD_POST}?foodId=${foodId}`,
