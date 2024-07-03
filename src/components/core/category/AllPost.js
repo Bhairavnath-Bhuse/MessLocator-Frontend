@@ -4,7 +4,9 @@ import { toast } from "react-hot-toast";
 import 'react-toastify/dist/ReactToastify.css';
 import { apiConnector } from "../../../services/operations/apiconnector";
 import { postEndpoints } from "../../../services/operations/api";
-import Card from "./Card"
+import Card from "./Card";
+import Skeleton from "./Skeleton";
+import NotFound from "../../../assests/NotFound.jpeg"
 
 const AllPost = () => {
     const [posts, setPosts] = useState([]);
@@ -40,7 +42,10 @@ const AllPost = () => {
             <ToastContainer />
             <div className='mt-[44px] mx-auto w-11/12 flex flex-row gap-4 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 justify-evenly pt-4 flex-wrap'>
                 {loading ? (
-                    <p className="flex items-center justify-center">Loading...</p>
+                    <div className="flex flex-col w-[80%] mb-16 justify-between md:flex-row">
+                    <Skeleton/>
+                    <Skeleton/>
+                </div>
                 ) : (
                     Array.isArray(posts) && posts.length > 0 ? (
                         posts.map((post) => (
@@ -48,9 +53,14 @@ const AllPost = () => {
                                 <Card key={post._id} post={post} />
                             </div>
                         ))
+                        
                     ) : (
-                        <p className="flex items-center justify-center">No posts available</p>
+                        <div>
+                        <img src= {NotFound} alt=" Page Not Found " className=" h-[70%] w-[70%] flex items-center mx-auto rounded-md"/>
+                        </div>
                     )
+                    
+                    
                 )}
             </div>
         </div>

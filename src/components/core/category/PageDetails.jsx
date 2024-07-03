@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { apiConnector } from '../../../services/operations/apiconnector';
 import PageDetailsSecI from './PageDetailsSecI';
 import { postEndpoints } from '../../../services/operations/api';
+import Skeleton from './Skeleton';
 
 const PageDetails = () => {
     const { postId } = useParams();
@@ -35,7 +36,7 @@ const PageDetails = () => {
     }, [postId]); // Adding postId as a dependency to fetch new data when the postId changes
 
     if (!post) {
-        return <div>Loading...</div>;
+        return <div><Skeleton/></div>;
     }
 
     return (
