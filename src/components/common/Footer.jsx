@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
     
     return (
-        <footer className=" bg-richblack-700  text-white mb-0 ">
+        <footer className=" bg-richblack-700  text-white bottom-0 ">
             <div className="container flex flex-col p-5 items-center mx-auto px-4">
                 <div className="flex flex-col md:flex-row  w-10/12 overflow-hidden justify-between">
 

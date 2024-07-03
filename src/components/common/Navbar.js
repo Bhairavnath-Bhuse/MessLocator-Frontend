@@ -40,7 +40,7 @@ const [confirmationModal, setConfirmationModal] = useState(null)               /
 
   return (
 
-    <div className = {`flex h-14 mt-0 items-center justify-center border-b-[1px] border-b-richblack-700 bg-richblack-800 transition-all duration-200`} >
+    <div className = {`flex h-16 md:h-14 t items-center justify-center border-b-[1px] border-b-richblack-700 bg-richblack-800 transition-all duration-200`} >
          
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         
@@ -70,7 +70,7 @@ const [confirmationModal, setConfirmationModal] = useState(null)               /
 
         {/* Login / Signup / Dashboard */}
 
-        <div className="items-center md:gap-x-4 md:flex">
+        <div className="items-center flex md:gap-x-4 md:flex">
 
         
                                                         {/* if token === null then user are not login so we show login icon and sign icon  */}

@@ -18,9 +18,11 @@ export default function MyProfile(){
         <div className="flex mb-14 gap-x-6">
             <h1 className=" text-3xl font-bold  text-richblack-800"> My Profile </h1>
 
+            <div>
             <IconBtn text="Edit" onclick={() => {navigate("/dashboard/settings")}} >
                 <RiEditBoxLine />
             </IconBtn>
+            </div>
         </div>
       
         
