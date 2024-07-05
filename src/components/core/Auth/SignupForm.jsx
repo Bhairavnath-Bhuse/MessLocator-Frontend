@@ -16,7 +16,7 @@ function SignupForm() {
   const dispatch = useDispatch()
 
   // Client or MessOwner
-  const [accountType, setAccountType] = useState(ACCOUNT_TYPE.Client)
+  const [accountType, setAccountType] = useState(ACCOUNT_TYPE.MessOwner)
 
   const [formData, setFormData] = useState({
     firstName: "",

@@ -22,7 +22,7 @@ const Review = ({ post }) => {
             const response = await apiConnector('GET', `${ratingsEndpoints.GET_REVIEWS}?foodId=${post._id}`);
 
             if (response.status === 200) {
-                console.log('Fetched reviews:', response.data.data);
+                // console.log('Fetched reviews:', response.data.data);
                 setReviews(response.data.data);
             } else {
                 console.error(`Failed to fetch data. Status: ${response.status}`);
@@ -46,7 +46,7 @@ const Review = ({ post }) => {
             foodId: post._id,
             review: mycomment,
         };
-        console.log("Data in handle submit of review ", bodyData);
+        // console.log("Data in handle submit of review ", bodyData);
 
         try {
             if (!token || token === 'null') {
@@ -91,20 +91,20 @@ const Review = ({ post }) => {
             <ToastContainer />
             <div className='flex flex-col sm:mt-16 gap-3'>
                 <hr style={{ border: "1px reach-black-400 " }} />
-                <h2 className='font-mono text-richblack-900 text-xl'>Total Reviews: {reviews.length}</h2>
+                <h2 className='font-mono text-richblack-900 text-xl'>Total Comments: {reviews.length}</h2>
                 <hr style={{ border: "1px reach-black-400 " }} />
 
                 <textarea
                     value={mycomment}
                     onChange={(e) => setmycomment(e.target.value)}
-                    placeholder="Write your review here . . . ."
+                    placeholder="Write your comment here . . . ."
                 />
                 <button
                     onClick={handleSubmit}
                     disabled={isCommentLoading}
                     className={`text-center text-[13px] sm:text-[16px] px-6 mx-auto py-3 rounded-md font-bold shadow-[2px_2px_0px_0px_rgba(255,255,255,0.18)] hover:shadow-none hover:scale-95 transition-all duration-200 bg-yellow-50 text-black`}
                 >
-                    {isCommentLoading ? <Loading2 /> : 'Submit Review'}
+                    {isCommentLoading ? <Loading2 /> : 'Submit'}
                 </button>
 
                 {Array.isArray(reviews) && reviews.map((rev, index) => (

@@ -11,7 +11,7 @@ const PageDetailsSecI = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    console.log("User from Post from PageDetailsSecI", post);
+    // console.log("User from Post from PageDetailsSecI", post);
 
     const { user } = useSelector((state) => state.profile);
     // console.log("User from Local Storage Details from PageDetailsSecI", user);

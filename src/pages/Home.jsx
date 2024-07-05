@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.css";
 import CTAButton from "../components/core/home/Button";
 import ExploreMore from "../components/core/home/ExploreMore";
 import AllPost from "../components/core/category/AllPost";
 import { AppContext } from "../Context/AppContext";
 import CategoryPost from "../components/core/category/CategoryPost";
+import Warning from "../components/core/home/Warning";
+import { useSelector } from "react-redux";
 
 const Home = () => {
     const { category } = useContext(AppContext);
+    const { token } = useSelector((state) => state.auth) 
 
     console.log("Printing category value", category);
 
@@ -33,6 +36,13 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            
+          { token === null && ( <Link to="/signup">
+                                    <Warning/>
+                                </Link>
+                               )
+           }
 
             {/* Section 2 */}
             <div> 

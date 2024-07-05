@@ -6,7 +6,7 @@ import { profileEndpoints } from "../../../../services/operations/api";
 import Card from "../../category/Card";
 import { useSelector } from "react-redux";
 // import { toast } from "react-hot-toast"
-
+import NotFound from "../../../../assests/NotFound2.png"
 
 const MyPosts = () => {
     const [posts, setPosts] = useState([]);
@@ -14,7 +14,7 @@ const MyPosts = () => {
     const { token } = useSelector((state) => state.auth);
     const userId = user ? user._id : null;
 
-    console.log("Value of Token is ",token)
+    // console.log("Value of Token is ",token)
     const getOwnerFoodPost = async () => {
         if (!userId) {
             console.error("User ID is null or undefined");
@@ -35,11 +35,11 @@ const MyPosts = () => {
                 }
             );
 
-            console.log("API uRL after is ",`${profileEndpoints.GET_OWNER_POST_LIST}?ownerId=${userId}`)
+            // console.log("API uRL after is ",`${profileEndpoints.GET_OWNER_POST_LIST}?ownerId=${userId}`)
 
 
             if (response.status === 200) {
-                console.log("Fetched posts:", response.data.data);
+                // console.log("Fetched posts:", response.data.data);
                 setPosts(response.data.data); // Assuming your data is in response.data.data
             } else {
                 console.error(`Failed to fetch data. Status: ${response.status}`);
@@ -74,7 +74,9 @@ const MyPosts = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No posts available</p>
+                    <div>
+                        <img src= {NotFound} alt=" Page Not Found " className=" h-[70%] w-[70%] flex items-center mx-auto rounded-md"/>
+                     </div>
                 )}
             </div>
         </div>
