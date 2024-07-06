@@ -26,7 +26,7 @@ const Home = () => {
 
                     <div className="text-center w-11/12 text-lg font-bold text-richblack-200">
                         <p>A Nutritious diet can improve mood, reduce stress, and enhance
-                             cognitive function, contributing to better mMntal Health.
+                             cognitive function, contributing to better Mental Health.
                              Curate a diverse selection of Messes offering high-quality, 
                              Nutritious Meals to cater to different dietary preferences and needs.</p>
                     </div>
